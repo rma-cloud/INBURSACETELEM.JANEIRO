@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório INBURSA e CETELEM - Janeiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+        h1, h2, h3, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .tab-active {
+            border-bottom: 3px solid #38bdf8;
+            color: #38bdf8;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Custom scrollbar for table */
+        .table-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="bg-[#1a237e] text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-scale-balanced text-sky-400 text-2xl"></i>
+                    <span class="font-bold text-lg tracking-wider">JURÍDICO</span>
+                </div>
+                <nav class="hidden md:flex space-x-8 h-full items-center text-sm font-semibold uppercase tracking-wider">
+                    <button onclick="showSection('inbursa')" class="nav-btn tab-active px-3 py-7 transition-all duration-300 hover:text-sky-300" id="btn-inbursa">RAR INBURSA</button>
+                    <button onclick="showSection('cetelem')" class="nav-btn px-3 py-7 transition-all duration-300 hover:text-sky-300" id="btn-cetelem">RAR CETELEM</button>
+                </nav>
+                <div class="md:hidden">
+                    <button class="text-white p-2"><i class="fa-solid fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- SECÇÃO: INBURSA -->
+        <section id="inbursa" class="content-section active">
+            <div class="bg-blue-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center gap-4 mb-2">
+                        <i class="fa-solid fa-building-columns text-4xl text-blue-300"></i>
+                        <h2 class="text-4xl font-bold">RAR INBURSA</h2>
+                    </div>
+                    <p class="text-blue-200">Visão Geral da Base de Cessão e Operacional</p>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+                
+                <!-- Cards Principais -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Base Total -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-600">
+                        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Base Total de Cessão</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-5xl font-bold text-gray-900">622</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-sm text-gray-600">Base com Cessão Homologada</p>
+                            <p class="text-lg font-semibold text-blue-700">136 <span class="text-xs font-normal text-gray-500">(Polo Substituído)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Processos Encerrados -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-emerald-500">
+                        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-4">Processos Encerrados</h3>
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-5xl font-bold text-emerald-900">20</span>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full uppercase font-bold">Total</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-emerald-500"></div> Favoráveis</span>
+                                <span class="font-bold text-gray-800">13</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-red-500"></div> Desfavoráveis</span>
+                                <span class="font-bold text-gray-800">5</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-yellow-500"></div> Acordo</span>
+                                <span class="font-bold text-gray-800">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operacional e Audiências -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-indigo-500 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-4">Operacional & Audiências</h3>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-users text-indigo-600"></i>
+                                <span class="font-bold text-gray-800">Total Equipe: 3</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 ml-7 list-disc mb-6">
+                                <li>1 Advogada operação (ABN)</li>
+                                <li>1 Liderança</li>
+                                <li>1 Estagiária</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl text-center">
+                            <p class="text-xs font-bold text-gray-400 uppercase">Audiências Cliente</p>
+                            <p class="text-2xl font-bold text-gray-800">0</p>
+                            <p class="text-xs text-gray-500">0 pendentes pauta</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECÇÃO: CETELEM -->
+        <section id="cetelem" class="content-section">
+            <div class="bg-emerald-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center gap-4 mb-2">
+                        <i class="fa-solid fa-chart-pie text-4xl text-emerald-300"></i>
+                        <h2 class="text-4xl font-bold">RAR CETELEM</h2>
+                    </div>
+                    <p class="text-emerald-200">Produtividade, Jurídico e Análises</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+                
+                <!-- Produtividade Equipe -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                        <h3 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-emerald-600"></i> Produtividade Equipe
+                        </h3>
+                        <span class="text-sm text-gray-500 italic">Dados de Janeiro</span>
+                    </div>
+                    <div class="p-6 overflow-x-auto table-container">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="text-xs font-bold text-gray-500 uppercase border-b border-gray-200">
+                                    <th class="py-3 px-4">Advogado</th>
+                                    <th class="py-3 px-4 text-center text-blue-600">Prazo</th>
+                                    <th class="py-3 px-4 text-center text-indigo-600">Compromisso</th>
+                                    <th class="py-3 px-4 text-center text-emerald-600">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-700">
+                                <tr class="border-b hover:bg-gray-50 transition">
+                                    <td class="py-4 px-4 font-semibold">Adrielly B. do Nascimento</td>
+                                    <td class="py-4 px-4 text-center bg-blue-50 font-bold">51</td>
+                                    <td class="py-4 px-4 text-center bg-indigo-50 font-bold">105</td>
+                                    <td class="py-4 px-4 text-center bg-emerald-50 font-bold text-emerald-800">156</td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50 transition">
+                                    <td class="py-4 px-4 font-semibold">Danielle Ribeiro Rêgo Tavares</td>
+                                    <td class="py-4 px-4 text-center bg-blue-50 font-bold">43</td>
+                                    <td class="py-4 px-4 text-center bg-indigo-50 font-bold">38</td>
+                                    <td class="py-4 px-4 text-center bg-emerald-50 font-bold text-emerald-800">81</td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50 transition">
+                                    <td class="py-4 px-4 font-semibold">Maria Eduarda Dias Cardozo</td>
+                                    <td class="py-4 px-4 text-center bg-blue-50 font-bold">31</td>
+                                    <td class="py-4 px-4 text-center bg-indigo-50 font-bold">38</td>
+                                    <td class="py-4 px-4 text-center bg-emerald-50 font-bold text-emerald-800">69</td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50 transition">
+                                    <td class="py-4 px-4 font-semibold">Pedro Henrique Barbosa Lopes Sampaio</td>
+                                    <td class="py-4 px-4 text-center bg-blue-50 font-bold">64</td>
+                                    <td class="py-4 px-4 text-center bg-indigo-50 font-bold">97</td>
+                                    <td class="py-4 px-4 text-center bg-emerald-50 font-bold text-emerald-800">161</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition">
+                                    <td class="py-4 px-4 font-semibold">Thais Michelly Rodrigues da Silva</td>
+                                    <td class="py-4 px-4 text-center bg-blue-50 font-bold">45</td>
+                                    <td class="py-4 px-4 text-center bg-indigo-50 font-bold">42</td>
+                                    <td class="py-4 px-4 text-center bg-emerald-50 font-bold text-emerald-800">87</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Indicadores de Casos -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Atividade Jurídica -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-500">
+                        <h3 class="font-bold text-gray-800 mb-6 text-lg">Atividade Jurídica</h3>
+                        
+                        <div class="flex justify-between items-end mb-6">
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Total de Casos</p>
+                                <p class="text-4xl font-bold text-gray-900">1.434</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-500 mb-1">Aptos a trabalhar</p>
+                                <p class="text-2xl font-bold text-blue-600">1.382</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-xl mb-4">
+                            <p class="font-bold text-gray-700 mb-2 border-b border-gray-200 pb-2">52 Casos Sentenciados</p>
+                            <div class="flex gap-4">
+                                <div class="flex-1 text-center border-r border-gray-200">
+                                    <span class="block text-xl font-bold text-emerald-600">22</span>
+                                    <span class="text-xs uppercase text-emerald-800 font-semibold">Favoráveis</span>
+                                </div>
+                                <div class="flex-1 text-center">
+                                    <span class="block text-xl font-bold text-red-600">30</span>
+                                    <span class="text-xs uppercase text-red-800 font-semibold">Desfavoráveis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            <i class="fa-solid fa-folder-open mr-2"></i> Projetos especiais: 12 planilhas entregues (26/Jan)
+                        </div>
+                    </div>
+
+                    <!-- Análises da Semana -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-purple-500">
+                        <h3 class="font-bold text-gray-800 mb-6 text-lg">Análises (26/01 - 30/01)</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-purple-50 p-4 rounded-xl">
+                                <p class="font-bold text-purple-900 mb-1">ESTADO SP</p>
+                                <p class="text-xs text-purple-700 mb-2">Comarcas: SP, Barueri, Foro Central, Ribeirão Preto, Campinas</p>
+                                <div class="space-y-1 text-sm">
+                                    <p><strong>60</strong> Analisados</p>
+                                    <p><strong>25</strong> Aptos despachar</p>
+                                    <p><strong>25</strong> Agend. solicitados</p>
+                                    <p><strong>5</strong> Agendados / <strong>3</strong> Realizados</p>
+                                </div>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-xl">
+                                <p class="font-bold text-purple-900 mb-1">ESTADO RS</p>
+                                <p class="text-xs text-purple-700 mb-2">Comarca: Porto Alegre</p>
+                                <div class="space-y-1 text-sm">
+                                    <p><strong>34</strong> Analisados</p>
+                                    <p><strong>14</strong> Aptos despachar</p>
+                                    <p><strong>14</strong> Agend. solicitados</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm border-t pt-4">
+                            <span class="font-bold text-gray-700">Total Analisados: 94</span>
+                            <div class="text-right text-xs text-gray-500">
+                                <p>21 pendentes perícia</p>
+                                <p>5 laudos desfavoráveis</p>
+                                <p>2 acordo pré</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operacional e Migrações -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-yellow-500">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-gray-800 mb-4 uppercase text-sm tracking-widest">Estrutura Operacional</h3>
+                            <div class="flex items-center gap-3 bg-gray-50 p-4 rounded-lg">
+                                <i class="fa-solid fa-users-gear text-2xl text-yellow-600"></i>
+                                <div>
+                                    <p class="font-bold text-gray-900">Composição da Equipe</p>
+                                    <p class="text-gray-600">3 Advogados + 2 Assistentes + 6 Estagiários</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 mb-4 uppercase text-sm tracking-widest">Turnover / Migrações</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-right-from-bracket text-red-400 mt-1"></i> Tatiane Souza (TSSO) > Nubank</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-right-from-bracket text-red-400 mt-1"></i> Yasmin (YSM) > Serasa</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-right-from-bracket text-red-400 mt-1"></i> Maria Vitória (MVCS) > Nubank</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-arrow-right-from-bracket text-red-400 mt-1"></i> Thais (TMRS) > Nubank</li>
+                                <li class="flex items-start gap-2 border-t pt-2 mt-2"><i class="fa-regular fa-calendar text-blue-400 mt-1"></i> <strong>Programadas:</strong> Maria Eduarda (MEDC - Litigância), Pedro Henrique (PHS - Serasa), Danielle Alcantara (DAL - Nubank)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 - Relatório Mensal de Performance - JANEIRO</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Esconde todas as secções
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostra a secção alvo
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Atualiza os estilos das abas
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+            });
+            const activeBtn = document.getElementById('btn-' + sectionId);
+            if (activeBtn) {
+                activeBtn.classList.add('tab-active');
+            }
+
+            // Rola para o topo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
